@@ -1,5 +1,6 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React, { useState, useEffect } from "react";
+
 
 export default function GetDino() {
   const [error, setError] = useState(null);
@@ -27,7 +28,7 @@ export default function GetDino() {
     } else {
       return (
         <View>
-          <Text>
+          <Text style={styles.text}>
             <h1>Dinos available</h1>
             <ul>
               {Object.values(dinosList).map((dinosaur) =>
@@ -43,3 +44,11 @@ export default function GetDino() {
         )
       }
     }
+
+    const styles = StyleSheet.create({
+    
+      text: {
+        fontSize: 20,
+        color: 'red',
+      }
+    });
